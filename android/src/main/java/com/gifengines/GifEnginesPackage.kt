@@ -11,7 +11,12 @@ class GifEnginesPackage : ReactPackage {
     return emptyList()
   }
 
-  override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
-    return listOf(GifEnginesViewManager())
+  override fun createViewManagers(reactContext: ReactApplicationContext):MutableList<ViewManager<*,*>> {
+    val viewManagers: MutableList<ViewManager<*, *>> = ArrayList()
+    viewManagers.add(GlideViewManager())
+    viewManagers.add(CoilViewManager())
+    viewManagers.add(GIFDrawableViewManager())
+    viewManagers.add(GifImageViewManager())
+    return viewManagers
   }
 }

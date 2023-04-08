@@ -1,3 +1,6 @@
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-kapt"
+
 buildscript {
   // Buildscript is evaluated before everything else so we can't use getExtOrDefault
   def kotlin_version = rootProject.ext.has("kotlinVersion") ? rootProject.ext.get("kotlinVersion") : project.properties["GifEngines_kotlinVersion"]
@@ -58,7 +61,9 @@ android {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
   }
-
+  buildFeatures {
+      viewBinding true
+  }
 }
 
 repositories {
@@ -72,8 +77,15 @@ dependencies {
   // For < 0.71, this will be from the local maven repo
   // For > 0.71, this will be replaced by `com.facebook.react:react-android:$version` by react gradle plugin
   //noinspection GradleDynamicVersion
+  implementation 'androidx.appcompat:appcompat:1.5.1'
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  implementation 'com.github.bumptech.glide:glide:4.12.0'
+  kapt 'com.github.bumptech.glide:compiler:4.12.0'
+  implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.24'
+  implementation 'io.coil-kt:coil:1.4.0'
+  implementation 'io.coil-kt:coil-gif:2.3.0'
+  implementation 'com.felipecsl:gifimageview:2.1.0'
 }
 
 if (isNewArchitectureEnabled()) {

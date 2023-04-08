@@ -33,4 +33,7 @@ Pod::Spec.new do |s|
     s.dependency "RCTTypeSafety"
     s.dependency "ReactCommon/turbomodule/core"
   end
+  s.dependency 'SwiftGifOrigin', '~> 1.6.1'
+  s.dependency 'Gifu'
+  s.dependency 'FLAnimatedImage', '~> 1.0'
 end
