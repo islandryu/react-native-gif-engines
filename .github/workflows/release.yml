@@ -2,8 +2,8 @@ name: Release
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
 jobs:
   release:
@@ -22,6 +22,11 @@ jobs:
 
       - name: Set .npmrc
         run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+
+      - name: Set up Git user
+        run: |
+          git config user.name "islandryu"
+          git config user.email "shimaryuhei@gmail.com"
 
       - name: Release
         env:
