@@ -1,6 +1,6 @@
 {
   "name": "react-native-gif-engines",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React Native Gif Engines is a library that allows you to test multiple native libraries for displaying GIF animations on Android and iOS platforms, primarily to determine which engine provides the best performance.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
