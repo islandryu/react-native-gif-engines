@@ -39,7 +39,8 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "gif"
   ],
   "repository": "https://github.com/islandryu/react-native-gif-engines",
   "author": "SHIMA RYUHEI <65934663+islandryu@users.noreply.github.com> (https://github.com/islandryu)",
